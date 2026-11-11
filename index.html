@@ -228,9 +228,9 @@ nav { max-width: 1180px; margin: 0 auto; display: flex; align-items: center; jus
 /* ============================
    HERO
    ============================ */
-.hero { padding: 10rem 0 6rem; min-height: 100svh; display: flex; align-items: center; }
-.hero-inner { display: grid; grid-template-columns: 1fr; gap: 4rem; align-items: center; }
-@media (min-width: 900px) { .hero-inner { grid-template-columns: 1.6fr 1fr; } }
+.hero { padding: 8rem 0 5rem; min-height: 85svh; display: flex; align-items: center; }
+.hero-inner { display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center; }
+@media (min-width: 900px) { .hero-inner { grid-template-columns: 1.4fr 1fr; gap: 4rem; } }
 
 .badge {
   display: inline-flex; align-items: center; gap: 0.6rem;
@@ -242,7 +242,7 @@ nav { max-width: 1180px; margin: 0 auto; display: flex; align-items: center; jus
 
 h1 {
   font-family: 'Fraunces', serif; font-weight: 300;
-  font-size: clamp(2.8rem, 7.5vw, 6.8rem);
+  font-size: clamp(2.4rem, 5.5vw, 4.8rem);
   line-height: 1.15; letter-spacing: -0.03em;
   padding-bottom: 0.15em;
 }
@@ -286,15 +286,22 @@ h1 em {
 /* Hero info panel — clean rows like the reference screenshot */
 .hero-card {
   display: flex; flex-direction: column;
+  background: rgba(30, 19, 48, 0.4);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.25rem 1.75rem;
+  box-shadow: 0 16px 40px -15px rgba(0, 0, 0, 0.4);
 }
 .card-row {
   display: flex; justify-content: space-between; align-items: center;
-  padding: 1rem 0;
+  padding: 0.9rem 0;
   border-top: 1px solid var(--border);
   font-size: 0.88rem; color: var(--muted);
   transition: padding-left 0.35s cubic-bezier(.2,.8,.2,1), padding-right 0.35s cubic-bezier(.2,.8,.2,1);
 }
-.card-row:last-child { border-bottom: 1px solid var(--border); }
+.card-row:first-child { border-top: none; }
+.card-row:last-child { border-bottom: none; }
 .card-row:hover { padding-left: 0.5rem; padding-right: 0.5rem; }
 .card-row span:first-child { color: var(--muted); }
 .card-row span:last-child { color: var(--fg); font-weight: 400; }
@@ -355,10 +362,10 @@ h2 {
 /* ============================
    EXPERIENCE
    ============================ */
-.exp-list { margin-top: 3rem; border-top: 1px solid var(--border); }
+.exp-list { margin-top: 2.5rem; border-top: 1px solid var(--border); }
 .exp-item {
   display: grid; grid-template-columns: 1fr;
-  gap: 0.8rem; padding: 2.2rem 1rem;
+  gap: 0.8rem; padding: 2rem 1rem;
   border-bottom: 1px solid var(--border);
   position: relative; cursor: default;
   transition: padding-left 0.4s cubic-bezier(.2,.8,.2,1), background 0.4s;
@@ -368,15 +375,16 @@ h2 {
   background: linear-gradient(90deg, rgba(192,158,245,0.05), transparent 60%);
   opacity: 0; transition: opacity 0.4s;
 }
-.exp-item:hover { padding-left: 2rem; }
+.exp-item:hover { padding-left: 1.5rem; }
 .exp-item:hover::before { opacity: 1; }
 .exp-item > * { position: relative; z-index: 1; }
-.exp-period { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: var(--accent); letter-spacing: 0.06em; }
-.exp-role { font-family: 'Fraunces', serif; font-weight: 300; font-size: 1.55rem; letter-spacing: -0.01em; margin-top: 0.25rem; }
-.exp-company { font-size: 0.88rem; color: var(--muted); margin-top: 0.1rem; }
-.exp-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.7; margin-top: 0.6rem; max-width: 58ch; }
-.exp-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.8rem; }
-@media (min-width: 768px) { .exp-item { grid-template-columns: 130px 1fr; gap: 2rem; align-items: start; } }
+.exp-period { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: var(--accent); letter-spacing: 0.06em; line-height: 1.5; }
+.exp-role { font-family: 'Fraunces', serif; font-weight: 300; font-size: 1.5rem; letter-spacing: -0.01em; margin-top: 0.2rem; }
+.exp-company { font-size: 0.9rem; color: var(--primary); margin-top: 0.15rem; font-weight: 400; }
+.exp-desc { font-size: 0.92rem; color: var(--muted); line-height: 1.7; margin-top: 0.65rem; max-width: 82ch; }
+.exp-tags { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.9rem; }
+@media (min-width: 768px) { .exp-item { grid-template-columns: 200px 1fr; gap: 2.5rem; align-items: start; } }
+@media (min-width: 1200px) { .exp-item { grid-template-columns: 220px 1fr; gap: 3rem; } }
 
 /* ============================
    WORK / PROJECTS
@@ -655,7 +663,7 @@ footer {
 
 /* Tablets */
 @media (max-width: 900px) {
-  .hero { padding: 8rem 0 4rem; min-height: auto; }
+  .hero { padding: 7rem 0 3.5rem; min-height: auto; }
   .hero-card { margin-top: 1rem; }
   .work-header { margin-bottom: 2.5rem; }
   .project { grid-template-columns: 1fr; }
@@ -849,7 +857,7 @@ footer {
       </div>
 
       <div class="hero-card page-enter page-enter-5">
-  <div class="card-row"><span>Education</span><span>ICFAI University, Tripura</span></div>
+  <div class="card-row"><span>Education</span><span>ICFAI University Tripura</span></div>
   <div class="card-row"><span>Degree</span><span>B.Tech CSE (2023 - 2027)</span></div>
   <div class="card-row"><span>Focus</span><span>Full-Stack &amp; AI/ML</span></div>
   <div class="card-row"><span>Location</span><span>Tripura, India</span></div>
@@ -862,13 +870,13 @@ footer {
 <div class="marquee-wrap" aria-hidden="true">
   <div class="marquee-track">
     <div class="marquee-group">
-      <span>React <i>✦</i></span><span>TypeScript <i>✦</i></span><span>FastAPI <i>✦</i></span>
-      <span>LangChain <i>✦</i></span><span>MongoDB <i>✦</i></span><span>Solid.js <i>✦</i></span>
+      <span>React <i>✦</i></span><span>FastAPI <i>✦</i></span>
+      <span>LangChain <i>✦</i></span><span>Solid.js <i>✦</i></span>
       <span>React Native <i>✦</i></span><span>Tailwind CSS <i>✦</i></span><span>PostgreSQL <i>✦</i></span><span>Python <i>✦</i></span>
     </div>
     <div class="marquee-group" aria-hidden="true">
-      <span>React <i>✦</i></span><span>TypeScript <i>✦</i></span><span>FastAPI <i>✦</i></span>
-      <span>LangChain <i>✦</i></span><span>MongoDB <i>✦</i></span><span>Solid.js <i>✦</i></span>
+      <span>React <i>✦</i></span><span>FastAPI <i>✦</i></span>
+      <span>LangChain <i>✦</i></span><span>Solid.js <i>✦</i></span>
       <span>React Native <i>✦</i></span><span>Tailwind CSS <i>✦</i></span><span>PostgreSQL <i>✦</i></span><span>Python <i>✦</i></span>
     </div>
   </div>
@@ -902,14 +910,42 @@ footer {
     <div class="exp-list">
       <div class="exp-item reveal rd1">
         <div>
+          <div class="exp-period">June 2026 — August 2026</div>
+        </div>
+        <div>
+          <div class="exp-role">Artificial Intelligence Intern</div>
+          <div class="exp-company">Infosys Springboard (Virtual Internship 7.0), Remote</div>
+          <p class="exp-desc">Developed PillSync, an Intelligent Medicine Reminder &amp; Tracking Platform using React.js, FastAPI, and PostgreSQL. Integrated Tesseract OCR, Gemini API, and Groq API (LLMs) to automatically parse prescription details and extract medical entities. Set up automated reminders using SendGrid (email) and used Pytest for testing.</p>
+          <div class="exp-tags">
+            <span class="tag">React.js</span><span class="tag">FastAPI</span><span class="tag">PostgreSQL</span><span class="tag">Gemini API</span><span class="tag">Groq API</span><span class="tag">Tesseract OCR</span><span class="tag">SendGrid</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-item reveal rd2">
+        <div>
+          <div class="exp-period">June 2026 — July 2026</div>
+        </div>
+        <div>
+          <div class="exp-role">Artificial Intelligence Intern</div>
+          <div class="exp-company">NIT Silchar, Remote</div>
+          <p class="exp-desc">Developed an AI-Based Viva System using React.js, FastAPI, and PostgreSQL that manages admin, teacher, and student data, conducts speech-based viva examinations, automates answer evaluation, and handles result generation.</p>
+          <div class="exp-tags">
+            <span class="tag">React.js</span><span class="tag">FastAPI</span><span class="tag">PostgreSQL</span><span class="tag">Speech-to-Text</span><span class="tag">AI Evaluation</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-item reveal rd4">
+        <div>
           <div class="exp-period">June 2025 — July 2025</div>
         </div>
         <div>
-          <div class="exp-role">GenAI Full Stack Intern</div>
-          <div class="exp-company">Yupcha Softwares</div>
-          <p class="exp-desc">Developed an AI-powered Twitter Bot from the ground up — built the frontend with Solid.js and Tailwind CSS, integrated FastAPI and PostgreSQL on the backend, and wired in OpenRouter and LangChain for AI-based tweet generation, voice input, command history, dual-feed support and along with secure user authentication.</p>
+          <div class="exp-role">GenAI - Full Stack Intern</div>
+          <div class="exp-company">Yupcha Softwares, Remote</div>
+          <p class="exp-desc">Developed an AI-powered Twitter Bot using Solid.js, Tailwind CSS, FastAPI, PostgreSQL, OpenRouter, Hugging Face API, and LangChain. Worked on frontend development, API integration, AI-based features, and backend functionality to build an interactive full-stack application, and deployed it using Render and Cloudflare.</p>
           <div class="exp-tags">
-            <span class="tag">Solid.js</span><span class="tag">Tailwind CSS</span><span class="tag">FastAPI</span><span class="tag">PostgreSQL</span><span class="tag">LangChain</span><span class="tag">OpenRouter</span>
+            <span class="tag">Solid.js</span><span class="tag">Tailwind CSS</span><span class="tag">FastAPI</span><span class="tag">PostgreSQL</span><span class="tag">LangChain</span><span class="tag">OpenRouter</span><span class="tag">Hugging Face API</span>
           </div>
         </div>
       </div>
@@ -930,9 +966,34 @@ footer {
     <div class="project-list">
 
       <article class="project reveal rd1">
+        <h3 class="proj-title">PillSync</h3>
+        <p class="proj-desc">Intelligent medicine reminder and tracking platform using Tesseract OCR, Gemini API, and Groq API for prescription entity extraction, with automated email alerts via SendGrid.</p>
+        <div class="proj-foot">
+          <span class="tag">React.js</span><span class="tag">FastAPI</span><span class="tag">Gemini API</span><span class="tag">Groq API</span><span class="tag">PostgreSQL</span>
+          <a href="https://github.com/ayuushisaha/pillsync.git" target="_blank" rel="noreferrer" class="gh-btn">
+            <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C8.422 18.07 7.635 17.7 7.635 17.7c-1.09-.745.083-.73.083-.73 1.205.085 1.84 1.237 1.84 1.237 1.07 1.835 2.807 1.305 3.492.998.108-.776.418-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23a11.5 11.5 0 0 1 3-.405c1.02.005 2.045.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.605-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            GitHub ↗
+          </a>
+        </div>
+        <span class="proj-arrow">→</span>
+      </article>
 
+      <article class="project reveal rd2">
+        <h3 class="proj-title">AI-Based Viva System</h3>
+        <p class="proj-desc">Examination platform integrating speech-to-text, answer validation algorithms, and AI evaluation to conduct viva exams and automate student assessments.</p>
+        <div class="proj-foot">
+          <span class="tag">React.js</span><span class="tag">FastAPI</span><span class="tag">PostgreSQL</span><span class="tag">AI / NLP</span>
+          <a href="https://github.com/ayuushisaha/ai_viva_question_module.git" target="_blank" rel="noreferrer" class="gh-btn">
+            <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C8.422 18.07 7.635 17.7 7.635 17.7c-1.09-.745.083-.73.083-.73 1.205.085 1.84 1.237 1.84 1.237 1.07 1.835 2.807 1.305 3.492.998.108-.776.418-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23a11.5 11.5 0 0 1 3-.405c1.02.005 2.045.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.605-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            GitHub ↗
+          </a>
+        </div>
+        <span class="proj-arrow">→</span>
+      </article>
+
+      <article class="project reveal rd4">
         <h3 class="proj-title">AI-Powered Twitter Bot</h3>
-        <p class="proj-desc">Developed a full-stack AI bot using Solid.js, Tailwind CSS, FastAPI, PostgreSQL, and LangChain, featuring tweet generation, voice input, command history and dual feeds.</p>
+        <p class="proj-desc">Automated social media bot using Solid.js, FastAPI, PostgreSQL, and LangChain with AI-based tweet generation, command history, and voice inputs.</p>
         <div class="proj-foot">
           <span class="tag">Solid.js</span><span class="tag">FastAPI</span><span class="tag">LangChain</span><span class="tag">PostgreSQL</span>
           <a href="https://github.com/ayuushisaha/ai-twitter-bot.git" target="_blank" rel="noreferrer" class="gh-btn">
@@ -943,13 +1004,11 @@ footer {
         <span class="proj-arrow">→</span>
       </article>
 
-      
       <article class="project reveal rd5">
-
-        <h3 class="proj-title">SpamShieldAI</h3>
-        <p class="proj-desc">Developed a spam detection system using NLP (NLTK for text preprocessing) and machine learning (scikit-learn's Naive Bayes), deployed via Streamlit with interactive UI featuring real-time classification and confidence scoring accuracy on email spam.</p>
+        <h3 class="proj-title">Spam Mail Detection</h3>
+        <p class="proj-desc">Web app built with Python, NLP and Naive Bayes (Streamlit) that classifies a given email message as spam or not spam.</p>
         <div class="proj-foot">
-          <span class="tag">Python</span><span class="tag">scikit-learn</span><span class="tag">NLP</span>
+          <span class="tag">Python</span><span class="tag">Machine Learning</span><span class="tag">NLP</span><span class="tag">Streamlit</span>
           <a href="https://github.com/ayuushisaha/spamshieldai.git" target="_blank" rel="noreferrer" class="gh-btn">
             <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C8.422 18.07 7.635 17.7 7.635 17.7c-1.09-.745.083-.73.083-.73 1.205.085 1.84 1.237 1.84 1.237 1.07 1.835 2.807 1.305 3.492.998.108-.776.418-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23a11.5 11.5 0 0 1 3-.405c1.02.005 2.045.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.605-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/></svg>
             GitHub ↗
@@ -958,12 +1017,11 @@ footer {
         <span class="proj-arrow">→</span>
       </article>
 
- <article class="project reveal rd6">
-
+      <article class="project reveal rd6">
         <h3 class="proj-title">Sentilytics</h3>
         <p class="proj-desc">A Python-based web application leveraging Streamlit, NLTK, and Naive Bayes to perform real-time sentiment analysis on movie reviews, showcasing robust text preprocessing and machine learning model deployment.</p>
         <div class="proj-foot">
-          <span class="tag">Python</span><span class="tag">Streamlit</span>
+          <span class="tag">Python</span><span class="tag">Streamlit</span><span class="tag">NLTK</span><span class="tag">NLP</span>
           <a href="https://github.com/ayuushisaha/sentilytics.git" target="_blank" rel="noreferrer" class="gh-btn">
             <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C8.422 18.07 7.635 17.7 7.635 17.7c-1.09-.745.083-.73.083-.73 1.205.085 1.84 1.237 1.84 1.237 1.07 1.835 2.807 1.305 3.492.998.108-.776.418-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23a11.5 11.5 0 0 1 3-.405c1.02.005 2.045.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.605-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/></svg>
             GitHub ↗
@@ -972,10 +1030,35 @@ footer {
         <span class="proj-arrow">→</span>
       </article>
 
-      <article class="project reveal rd3">
+      <article class="project reveal rd6">
+        <h3 class="proj-title">FitLifePro</h3>
+        <p class="proj-desc">Built FitLifePro, a fitness app in React Native with a workout timer, water tracker, progress stats, and saved workout history.</p>
+        <div class="proj-foot">
+          <span class="tag">React Native</span><span class="tag">Expo</span><span class="tag">AsyncStorage</span>
+          <a href="https://github.com/ayuushisaha/fitlifepro.git" target="_blank" rel="noreferrer" class="gh-btn">
+            <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C8.422 18.07 7.635 17.7 7.635 17.7c-1.09-.745.083-.73.083-.73 1.205.085 1.84 1.237 1.84 1.237 1.07 1.835 2.807 1.305 3.492.998.108-.776.418-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23a11.5 11.5 0 0 1 3-.405c1.02.005 2.045.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.605-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            GitHub ↗
+          </a>
+        </div>
+        <span class="proj-arrow">→</span>
+      </article>
 
+      <article class="project reveal rd1">
+        <h3 class="proj-title">GameHive</h3>
+        <p class="proj-desc">Responsive web gaming portal featuring multiple classic games built with React.js and interactive user interface.</p>
+        <div class="proj-foot">
+          <span class="tag">React.js</span><span class="tag">JavaScript</span><span class="tag">CSS</span>
+          <a href="https://github.com/ayuushisaha/GameHive.git" target="_blank" rel="noreferrer" class="gh-btn">
+            <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C8.422 18.07 7.635 17.7 7.635 17.7c-1.09-.745.083-.73.083-.73 1.205.085 1.84 1.237 1.84 1.237 1.07 1.835 2.807 1.305 3.492.998.108-.776.418-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23a11.5 11.5 0 0 1 3-.405c1.02.005 2.045.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.605-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            GitHub ↗
+          </a>
+        </div>
+        <span class="proj-arrow">→</span>
+      </article>
+
+      <article class="project reveal rd2">
         <h3 class="proj-title">PointPulse</h3>
-        <p class="proj-desc">Developed a full-stack leaderboard application using ReactJS (frontend) and NodeJS with MongoDB (backend), featuring dynamic ranking, point claiming, and real-time history tracking.</p>
+        <p class="proj-desc">Full-stack leaderboard system built with React, Node.js, and MongoDB featuring dynamic real-time rankings and point claiming history.</p>
         <div class="proj-foot">
           <span class="tag">React</span><span class="tag">Node.js</span><span class="tag">MongoDB</span>
           <a href="https://github.com/ayuushisaha/leaderboard-app.git" target="_blank" rel="noreferrer" class="gh-btn">
@@ -985,35 +1068,6 @@ footer {
         </div>
         <span class="proj-arrow">→</span>
       </article>
-
-      <article class="project reveal rd4">
-
-        <h3 class="proj-title">GameHive</h3>
-        <p class="proj-desc">Developed a responsive React.js web application featuring six interactive and user authentication.</p>
-        <div class="proj-foot">
-          <span class="tag">React.js</span>
-          <a href="https://github.com/ayuushisaha/GameHive.git" target="_blank" rel="noreferrer" class="gh-btn">
-            <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C8.422 18.07 7.635 17.7 7.635 17.7c-1.09-.745.083-.73.083-.73 1.205.085 1.84 1.237 1.84 1.237 1.07 1.835 2.807 1.305 3.492.998.108-.776.418-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23a11.5 11.5 0 0 1 3-.405c1.02.005 2.045.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.605-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/></svg>
-            GitHub ↗
-          </a>
-        </div>
-        <span class="proj-arrow">→</span>
-      </article>
-
-<article class="project reveal rd2">
-
-        <h3 class="proj-title">FitLifePro</h3>
-        <p class="proj-desc">a fitness tracking app in React Native with live workout sessions, real-time stats, and local data persistence using AsyncStorage.</p>
-        <div class="proj-foot">
-          <span class="tag">React Native</span><span class="tag">Expo</span>
-          <a href="https://github.com/ayuushisaha/fitlifepro.git" target="_blank" rel="noreferrer" class="gh-btn">
-            <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C8.422 18.07 7.635 17.7 7.635 17.7c-1.09-.745.083-.73.083-.73 1.205.085 1.84 1.237 1.84 1.237 1.07 1.835 2.807 1.305 3.492.998.108-.776.418-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23a11.5 11.5 0 0 1 3-.405c1.02.005 2.045.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.605-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/></svg>
-            GitHub ↗
-          </a>
-        </div>
-        <span class="proj-arrow">→</span>
-      </article>
-
     </div>
   </div>
 </section>
@@ -1029,10 +1083,12 @@ footer {
       <div class="reveal rd1">
         <p class="skills-label">Technical</p>
         <div class="chips">
-          <span class="chip">React.js</span><span class="chip">React Native</span><span class="chip">TypeScript</span>
+          <span class="chip">React.js</span><span class="chip">React Native</span>
           <span class="chip">Solid.js</span><span class="chip">Node.js</span><span class="chip">Python</span>
-          <span class="chip">FastAPI</span><span class="chip">LangChain</span><span class="chip">MongoDB</span>
-          <span class="chip">PostgreSQL</span><span class="chip">Tailwind CSS</span><span class="chip">Artificial Intelligence</span><span class="chip">Machine learning</span>
+          <span class="chip">FastAPI</span><span class="chip">PostgreSQL</span>
+          <span class="chip">Google Gemini API</span><span class="chip">Groq API</span>
+          <span class="chip">LLMs &amp; LangChain</span>
+          <span class="chip">Tesseract OCR</span><span class="chip">SendGrid</span><span class="chip">Pytest</span><span class="chip">Tailwind CSS</span>
         </div>
       </div>
       <div class="reveal rd2">
@@ -1067,7 +1123,7 @@ footer {
         </div>
         <div class="resume-actions">
           <!-- ↓ Replace this href with your Google Drive / hosted resume URL -->
-          <a href="https://drive.google.com/file/d/11AMwBW_l0J80lBGAvJYYI3DPermciH-P/view?usp=sharing" target="_blank" rel="noreferrer" class="resume-btn-view">
+          <a href="https://drive.google.com/file/d/1gxUf18aov8gJbaiXlWephzPb-5VRnw7u/view?usp=drivesdk" target="_blank" rel="noreferrer" class="resume-btn-view">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
             View Resume
           </a>
@@ -1081,8 +1137,8 @@ footer {
 <section class="certs">
   <div class="container">
     <div class="reveal">
-      <p class="eyebrow">Recognitions</p>
-      <h2>Hackathons &amp; learning</h2>
+      <p class="eyebrow">Learning</p>
+      <h2>Certifications</h2>
     </div>
     <div class="certs-grid">
       <div class="cert-item reveal rd1"><span class="cert-num">01</span><span class="cert-name">ISRO Bharatiya Antariksh Hackathon — Hack2skill</span></div>
@@ -1097,6 +1153,9 @@ footer {
       <div class="cert-item reveal rd2"><span class="cert-num">10</span><span class="cert-name">Frontend Challenge 01 — CodeXtream Community</span></div>
       <div class="cert-item reveal rd2"><span class="cert-num">11</span><span class="cert-name">Google Gemini AI Workshop — Unstop</span></div>
       <div class="cert-item reveal rd2"><span class="cert-num">12</span><span class="cert-name"> Cybersecurity Analyst Job Simulation — TATA / Forage</span></div>
+      <div class="cert-item reveal rd3"><span class="cert-num">13</span><span class="cert-name">IEEE Day — GTBIT</span></div>
+      <div class="cert-item reveal rd4"><span class="cert-num">14</span><span class="cert-name">Web3 — Chandigarh University</span></div>
+      <div class="cert-item reveal rd1"><span class="cert-num">15</span><span class="cert-name">Nebula Nexus — Manipal University</span></div>
     </div>
   </div>
 </section>
@@ -1126,7 +1185,7 @@ footer {
       </form>
 
       <div class="socials reveal rd3">
-        <a href="https://www.linkedin.com/in/ayushi-s-6a73bb35b" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+        <a href="https://linkedin.com/in/ayushi-saha-cse" target="_blank" rel="noreferrer">LinkedIn ↗</a>
         <a href="https://github.com/ayuushisaha" target="_blank" rel="noreferrer">GitHub ↗</a>
         <a href="mailto:ayushisaha278@gmail.com">Email ↗</a>
       </div>
@@ -1137,7 +1196,7 @@ footer {
 <!-- ======================== FOOTER ======================== -->
 <footer>
   <div class="footer-inner">
-    <span>© 2026 Ayushi Saha</span>
+    <span>© Ayushi Saha</span>
   </div>
 </footer>
 
